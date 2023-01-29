@@ -1,9 +1,18 @@
-import { useInput } from "../hooks/useInput";
+import DateInput from "./DateInput";
+import NumberInput from "./NumberInput";
+import PhoneInput from "./PhoneInput";
 
-function Input({ rule, maxLen = 20 }) {
-  const [value, onChange] = useInput(rule);
-
-  return <input onChange={onChange} value={value} maxLength={maxLen} />;
-}
+const Input = ({ type }) => {
+  switch (type) {
+    case "number":
+      return <NumberInput />;
+    case "date":
+      return <DateInput />;
+    case "phone":
+      return <PhoneInput />;
+    default:
+      return <input />;
+  }
+};
 
 export default Input;
