@@ -9,7 +9,6 @@ export const useFormatInput = (type, initialValue = "") => {
   const onChange = (e) => {
     const { value } = e.target;
     const formattedValue = format(value);
-    console.log(formattedValue);
     setValue(formattedValue);
   };
 
